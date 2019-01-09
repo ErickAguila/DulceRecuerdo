@@ -1,0 +1,229 @@
+﻿@{
+    ViewBag.Title = "Pasteleria - Dulce Recuerdo";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Pasteleria Dulce Recuerdo</title>
+    @Styles.Render("~/Content/Home/Index/css")
+    <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
+    <style>
+        .titulo-logo {
+            font-family: 'Tangerine', cursive;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <div class="caviar-load"></div>
+        <div class="preload-icons">
+            <img class="preload-1" src="~/Content/Template/img/core-img/preload-1.png" alt="">
+            <img class="preload-2" src="~/Content/Template/img/core-img/preload-2.png" alt="">
+            <img class="preload-3" src="~/Content/Template/img/core-img/preload-3.png" alt="">
+        </div>
+    </div>
+    <header class="header_area" id="header">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 h-100">
+                    <nav class="h-100 navbar navbar-expand-lg align-items-center">
+                        <a class="navbar-brand titulo-logo" href="/Home/Home">Dulce Recuerdo</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#caviarNav" aria-controls="caviarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
+                        <div class="collapse navbar-collapse" id="caviarNav">
+                            <ul class="navbar-nav ml-auto" id="caviarMenu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Home/Home">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#about">Nosotros</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#menu">Menú</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Home/Productos">Productos</a>
+                                </li>
+                                @{
+                                    if (ViewBag.nombreUsuario != null)
+                                    {
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@ViewBag.nombreUsuario</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                @{
+                                                    if (ViewBag.idPerfilUsuario == "1")//Administrador
+                                                    {
+                                                        <a class="dropdown-item" href="/Home/Resumen">Administrar sitio</a>
+                                                    }
+                                                    if (ViewBag.idPerfilUsuario == "2") //Cliente
+                                                    {
+                                                        <a class="dropdown-item" href="/Usuario/MiPedido">Mis pedidos</a>
+                                                        <a class="dropdown-item" href="/Usuario/MiPerfil">Mi perfil</a>
+                                                    }
+                                                }
+                                                <a class="dropdown-item" href="#" onclick="Logout()">Cerrar Sesión</a>
+                                            </div>
+                                        </li>
+                                                    }
+                                                    else
+                                                    {
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="/Home/index">Ingresar</a>
+                                                        </li>
+                                                    }
+                                }
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="caviar-hero-area" id="home">
+        <div class="welcome-social-info">
+            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="caviar-hero-slides owl-carousel">
+            <div class="single-hero-slides bg-img" style="background-image: url(/Content/Template/img/bg-img/fondo1.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-11 col-md-6 col-lg-4">
+                            <div class="hero-content">
+                                <h2>Cupcakes</h2>
+                                <p>Un Cupcate, es una pequela porcion de torta para una persona. Se hornean en un mode igual que el de magdalena y muffins. En el molde se colocan unos papeles llamados cápsulas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-hero-slides bg-img" style="background-image: url(/Content/Template/img/bg-img/fondo2.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-11 col-md-6 col-lg-4">
+                            <div class="hero-content">
+                                <h2>Cocadas</h2>
+                                <p>La cocada es un dulce típico de España. Elaborado a base de una masa de coco y leche que posteriormente es horneada.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-hero-slides bg-img" style="background-image: url(/Content/Template/img/bg-img/fondo3.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-11 col-md-6 col-lg-4">
+                            <div class="hero-content">
+                                <h2>Tortas</h2>
+                                <p>Una torta es un alimento que se elabora con un pan, el cual se parte por la mitad y se rellena de diferentes ingredientes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="caviar-about-us-area section-padding-150" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6">
+                    <div class="about-us-thumbnail wow fadeInUp" data-wow-delay="0.5s">
+                        <img src="~/Content/Template/img/nostros.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-5 ml-md-auto">
+                    <div class="section-heading">
+                        <h2>Nosotros</h2>
+                    </div>
+                    <div class="about-us-content">
+                        <span>Pasteleria</span>
+                        <p>En el mismo lugar donde hoy está la casa matriz de Productos de pasteleria, en 1884 inició su presencia en el entonces llamado Barrio Yungay, en un pequeño local, el cual fue consolidando paulatinamente su radio de acción, tanto en su entorno como en otros barrios residenciales y negocios del centro de Santiago.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-us-second-part">
+                <div class="row align-items-center pt-200">
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="about-us-content">
+                            <span>Nuestro pastelero</span>
+                            <p>Luego siguió su carrera en Camba, La Fiorentina y El Bombón, hasta ingresar en la pastelería del Hotel Sheraton, enfocando su trayectoria en las delicias que todos pueden disfrutar en sus servicios gastronómicos.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 ml-md-auto">
+                        <div class="about-us-thumbnail wow fadeInUp" data-wow-delay="0.5s">
+                            <img src="~/Content/Template/img/pastelero.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="caviar-dish-menu" id="menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 menu-heading">
+                    <div class="section-heading text-center">
+                        <h2>Especial de la casa</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="caviar-single-dish wow fadeInUp" data-wow-delay="0.5s">
+                        <img src="~/Content/Template/img/cupcake.png" alt="">
+                        <div class="dish-info">
+                            <h6 class="dish-name">Cupcake</h6>
+                            <p class="dish-price">$850</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="caviar-single-dish wow fadeInUp" data-wow-delay="1s">
+                        <img src="~/Content/Template/img/donas.png" alt="">
+                        <div class="dish-info">
+                            <h6 class="dish-name">Nodas glaciadas</h6>
+                            <p class="dish-price">$700</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="caviar-single-dish wow fadeInUp" data-wow-delay="1.5s">
+                        <img src="~/Content/Template/img/cupcake.png" alt="">
+                        <div class="dish-info">
+                            <h6 class="dish-name">Cupcake relleno</h6>
+                            <p class="dish-price">$1050</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="caviar-footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-text">
+                        <a href="#" class="navbar-brand titulo-logo">Dulce Recuerdo</a>
+                        <p>
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    @Scripts.Render("~/Content/Home/Index/js")
+    <script>
+        $(document).ready(function () {
+            $(".owl-next fadeInUp animated").hide();
+        })
+    </script>
+</body>
+</html>

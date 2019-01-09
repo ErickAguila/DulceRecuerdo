@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="84c7afe51db14dbaa7c234889d7c15e2" Name="Diagram1">
+        <EntityTypeShape EntityType="dulcerec_desaModel.Carrito" Width="1.5" PointX="3" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dulcerec_desaModel.CarritoDetalle" Width="1.5" PointX="5.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dulcerec_desaModel.CarritoEstado" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dulcerec_desaModel.Categoria" Width="1.5" PointX="7.875" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dulcerec_desaModel.Perfil" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dulcerec_desaModel.Producto" Width="1.5" PointX="7.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dulcerec_desaModel.Usuario" Width="1.5" PointX="0.75" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="dulcerec_desaModel.FK_Carrito_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="dulcerec_desaModel.FK_CarritoDetalle_Carrito" ManuallyRouted="false" />
+        <AssociationConnector Association="dulcerec_desaModel.FK_CarritoDetalle_CarritoEstado" ManuallyRouted="false" />
+        <AssociationConnector Association="dulcerec_desaModel.FK_CarritoDetalle_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="dulcerec_desaModel.FK_Producto_Categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="dulcerec_desaModel.FK_Usuario_Perfil" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
